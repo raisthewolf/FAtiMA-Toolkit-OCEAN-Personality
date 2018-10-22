@@ -27,6 +27,7 @@ namespace EmotionalAppraisal
         private EmotionDisposition m_defaultEmotionalDisposition;
         private Dictionary<string, EmotionDisposition> m_emotionDispositions;
         private Dictionary<string, Goal> m_goals;
+        private Dictionary<string, double> m_personality;
 
         [NonSerialized]
         private OCCAffectDerivationComponent m_occAffectDerivator;
@@ -43,6 +44,13 @@ namespace EmotionalAppraisal
             m_defaultEmotionalDisposition = new EmotionDisposition("*", 1, 1);
             m_occAffectDerivator = new OCCAffectDerivationComponent();
             m_appraisalDerivator = new ReactiveAppraisalDerivator();
+            m_personality = new Dictionary<string, double>();
+
+            m_personality.Add("Openness", 0.0);
+            m_personality.Add("Conscientiousness", 0.0);
+            m_personality.Add("Extraversion", 0.0);
+            m_personality.Add("Agreeableness", 0.0);
+            m_personality.Add("Neuroticism", 0.0);
         }
 
         public EmotionDispositionDTO DefaultEmotionDisposition
