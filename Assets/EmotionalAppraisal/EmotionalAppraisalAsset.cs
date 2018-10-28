@@ -53,6 +53,25 @@ namespace EmotionalAppraisal
             m_personality.Add("Neuroticism", 0.0);
         }
 
+        public void setPersonalityFactor(string trait, double value) {
+            string [] list = new string [5] {"Openness", "Conscientiousness", "Extraversion", "Agreeableness", "Neuroticism" };
+            if (value >= -1.0 && value <= 1.0) {
+                int check = 0;
+                for (int i = 0; i < 5; i++) {
+                    if (trait == list[i]) {
+                        check = 1;
+                    }
+                }
+                if (check == 1) {
+                    m_personality[trait] = value;
+                }
+            }
+        }
+
+        public Double getPersonalityFactor(string trait) {
+            return m_personality[trait];
+        }
+
         public EmotionDispositionDTO DefaultEmotionDisposition
         {
             get { return m_defaultEmotionalDisposition.ToDto(); }
