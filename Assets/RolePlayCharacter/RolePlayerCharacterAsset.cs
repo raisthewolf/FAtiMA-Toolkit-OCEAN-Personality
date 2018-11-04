@@ -607,6 +607,32 @@ namespace RolePlayCharacter
 
         private static readonly Name LOG_TEMPLATE = Name.BuildName("Log");
 
+        private static readonly Name PERSONALITY_FACTOR_TEMPLATE = (Name)"PersonalityFactor";
+
+        private IEnumerable<DynamicPropertyResult> PersonalityFactorCalculator(IQueryContext context, Name x, Name y) {
+            if (context.Perspective != Name.SELF_SYMBOL)
+                yield break;
+
+            var emo = m_emotionalState.GetStrongestEmotion();
+            if (emo == null)
+                yield break;
+
+            var emoValue = emo.EmotionType;
+
+            if (x.IsVariable) {
+
+                var sub = new Substitution(x, new ComplexValue(context.Queryable.Perspective));
+                foreach (var c in context.Constraints) {
+                    if (c.AddSubstitution(sub))
+                        yield return new DynamicPropertyResult(new ComplexValue((Name)emoValue), c);
+                }
+            } else {
+                foreach (var c in context.Constraints) {
+                    yield return new DynamicPropertyResult(new ComplexValue((Name)emoValue), c);
+                }
+            }
+        }
+
         private IEnumerable<DynamicPropertyResult> EmotionIntensityPropertyCalculator(IQueryContext context, Name x, Name y)
         {
            
