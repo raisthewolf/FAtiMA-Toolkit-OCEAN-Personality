@@ -609,31 +609,37 @@ namespace RolePlayCharacter
 
         private static readonly Name PERSONALITY_FACTOR_TEMPLATE = (Name)"PersonalityFactor";
 
-        private IEnumerable<DynamicPropertyResult> PersonalityFactorCalculator(IQueryContext context, Name x, Name y) {
-            if (context.Perspective != Name.SELF_SYMBOL)
-                yield break;
+        private IEnumerable<DynamicPropertyResult> PersonalityFactorCalculator(IQueryContext context, Name x, Name y) 
+            // Should only accept SELF, its rpc Name our a variable that should be subbed by its name
+            {
+                if (context.Perspective != Name.SELF_SYMBOL)
+                    yield break;
 
-            var emo = m_emotionalState.GetStrongestEmotion();
-            if (emo == null)
-                yield break;
+                if (m_emotionalAppraisalAsset == null)
+                    yield break;
 
-            var emoValue = emo.EmotionType;
+                if (x.IsVariable)
+                    foreach (var resultPair in context.AskPossibleProperties(x)) {
+                    var v = m_emotionalAppraisalAsset.getPersonalityFactor(y.ToString());
+                        foreach (var c in resultPair.Item2) {
+                            yield return new DynamicPropertyResult(new ComplexValue(Name.BuildName(v)), c);
+                        }
+                    } else {
+                    if (x != Name.SELF_SYMBOL && x != (Name)context.Queryable.Perspective)
+                        yield break;
 
-            if (x.IsVariable) {
+                    var v = m_emotionalAppraisalAsset.getPersonalityFactor(y.ToString());
 
-                var sub = new Substitution(x, new ComplexValue(context.Queryable.Perspective));
-                foreach (var c in context.Constraints) {
-                    if (c.AddSubstitution(sub))
-                        yield return new DynamicPropertyResult(new ComplexValue((Name)emoValue), c);
-                }
-            } else {
-                foreach (var c in context.Constraints) {
-                    yield return new DynamicPropertyResult(new ComplexValue((Name)emoValue), c);
+                    foreach (var c in context.Constraints) {
+                        yield return new DynamicPropertyResult(new ComplexValue(Name.BuildName(v)), c);
+                    }
+
+                    if (context.Constraints.IsEmpty())
+                        yield return new DynamicPropertyResult(new ComplexValue(Name.BuildName(v)), new SubstitutionSet());
                 }
             }
-        }
 
-        private IEnumerable<DynamicPropertyResult> EmotionIntensityPropertyCalculator(IQueryContext context, Name x, Name y)
+            private IEnumerable<DynamicPropertyResult> EmotionIntensityPropertyCalculator(IQueryContext context, Name x, Name y)
         {
            
             if (context.Perspective != Name.SELF_SYMBOL)
