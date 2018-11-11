@@ -205,5 +205,9 @@ namespace EmotionalAppraisalWF
             LoadedAsset.RemoveGoals(goalsToRemove);
             dataGridViewGoals.DataSource = new BindingListView<GoalDTO>(LoadedAsset.GetAllGoals().ToList());
         }
+
+        private void label1_Click(object sender, EventArgs e) {
+
+        }
     }
 }
