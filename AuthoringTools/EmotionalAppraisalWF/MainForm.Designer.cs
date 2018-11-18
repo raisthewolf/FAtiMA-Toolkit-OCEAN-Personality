@@ -61,24 +61,24 @@
             this.buttonEditEmotionDisposition = new System.Windows.Forms.Button();
             this.buttonAddEmotionDisposition = new System.Windows.Forms.Button();
             this.buttonRemoveEmotionDisposition = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nLabel = new System.Windows.Forms.Label();
+            this.aLabel = new System.Windows.Forms.Label();
+            this.eLabel = new System.Windows.Forms.Label();
+            this.cLabel = new System.Windows.Forms.Label();
+            this.oLabel = new System.Windows.Forms.Label();
+            this.recalcDButton = new System.Windows.Forms.Button();
+            this.updatePButton = new System.Windows.Forms.Button();
+            this.nEntry = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
+            this.aEntry = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
+            this.eEntry = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
+            this.cEntry = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
+            this.oEntry = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
             this.decayErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.emotionListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.mainFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.floatFieldBox1 = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
-            this.floatFieldBox2 = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
-            this.floatFieldBox3 = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
-            this.floatFieldBox4 = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
-            this.floatFieldBox5 = new GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dynamicPropertyListing.SuspendLayout();
             this.appraisalRulesTagePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -98,10 +98,10 @@
             this.tableLayoutPanel10.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmotionDispositions)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.decayErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emotionListItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).BeginInit();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dynamicPropertyListing
@@ -482,7 +482,7 @@
             "7",
             "8",
             "9"});
-            this.comboBoxDefaultDecay.Location = new System.Drawing.Point(95, 7);
+            this.comboBoxDefaultDecay.Location = new System.Drawing.Point(95, 9);
             this.comboBoxDefaultDecay.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDefaultDecay.Name = "comboBoxDefaultDecay";
             this.comboBoxDefaultDecay.Size = new System.Drawing.Size(83, 24);
@@ -504,7 +504,7 @@
             "7",
             "8",
             "9"});
-            this.comboBoxDefaultThreshold.Location = new System.Drawing.Point(304, 7);
+            this.comboBoxDefaultThreshold.Location = new System.Drawing.Point(304, 9);
             this.comboBoxDefaultThreshold.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxDefaultThreshold.Name = "comboBoxDefaultThreshold";
             this.comboBoxDefaultThreshold.Size = new System.Drawing.Size(84, 24);
@@ -585,24 +585,20 @@
             this.buttonRemoveEmotionDisposition.UseVisualStyleBackColor = true;
             this.buttonRemoveEmotionDisposition.Click += new System.EventHandler(this.buttonRemoveEmotionDisposition_Click);
             // 
-            // decayErrorProvider
-            // 
-            this.decayErrorProvider.ContainerControl = this;
-            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.floatFieldBox5);
-            this.tabPage2.Controls.Add(this.floatFieldBox4);
-            this.tabPage2.Controls.Add(this.floatFieldBox3);
-            this.tabPage2.Controls.Add(this.floatFieldBox2);
-            this.tabPage2.Controls.Add(this.floatFieldBox1);
+            this.tabPage2.Controls.Add(this.nLabel);
+            this.tabPage2.Controls.Add(this.aLabel);
+            this.tabPage2.Controls.Add(this.eLabel);
+            this.tabPage2.Controls.Add(this.cLabel);
+            this.tabPage2.Controls.Add(this.oLabel);
+            this.tabPage2.Controls.Add(this.recalcDButton);
+            this.tabPage2.Controls.Add(this.updatePButton);
+            this.tabPage2.Controls.Add(this.nEntry);
+            this.tabPage2.Controls.Add(this.aEntry);
+            this.tabPage2.Controls.Add(this.eEntry);
+            this.tabPage2.Controls.Add(this.cEntry);
+            this.tabPage2.Controls.Add(this.oEntry);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -611,119 +607,124 @@
             this.tabPage2.Text = "Personality Factors";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // floatFieldBox1
+            // nLabel
             // 
-            this.floatFieldBox1.HasBounds = true;
-            this.floatFieldBox1.Location = new System.Drawing.Point(153, 44);
-            this.floatFieldBox1.MaxValue = 1F;
-            this.floatFieldBox1.MinValue = -1F;
-            this.floatFieldBox1.Name = "floatFieldBox1";
-            this.floatFieldBox1.Size = new System.Drawing.Size(100, 22);
-            this.floatFieldBox1.TabIndex = 0;
+            this.nLabel.AutoSize = true;
+            this.nLabel.Location = new System.Drawing.Point(21, 158);
+            this.nLabel.Name = "nLabel";
+            this.nLabel.Size = new System.Drawing.Size(79, 16);
+            this.nLabel.TabIndex = 11;
+            this.nLabel.Text = "Neuroticism";
             // 
-            // floatFieldBox2
+            // aLabel
             // 
-            this.floatFieldBox2.HasBounds = true;
-            this.floatFieldBox2.Location = new System.Drawing.Point(153, 72);
-            this.floatFieldBox2.MaxValue = 1F;
-            this.floatFieldBox2.MinValue = -1F;
-            this.floatFieldBox2.Name = "floatFieldBox2";
-            this.floatFieldBox2.Size = new System.Drawing.Size(100, 22);
-            this.floatFieldBox2.TabIndex = 1;
+            this.aLabel.AutoSize = true;
+            this.aLabel.Location = new System.Drawing.Point(21, 130);
+            this.aLabel.Name = "aLabel";
+            this.aLabel.Size = new System.Drawing.Size(101, 16);
+            this.aLabel.TabIndex = 10;
+            this.aLabel.Text = "Agreeableness";
             // 
-            // floatFieldBox3
+            // eLabel
             // 
-            this.floatFieldBox3.HasBounds = true;
-            this.floatFieldBox3.Location = new System.Drawing.Point(153, 102);
-            this.floatFieldBox3.MaxValue = 1F;
-            this.floatFieldBox3.MinValue = -1F;
-            this.floatFieldBox3.Name = "floatFieldBox3";
-            this.floatFieldBox3.Size = new System.Drawing.Size(100, 22);
-            this.floatFieldBox3.TabIndex = 2;
+            this.eLabel.AutoSize = true;
+            this.eLabel.Location = new System.Drawing.Point(21, 102);
+            this.eLabel.Name = "eLabel";
+            this.eLabel.Size = new System.Drawing.Size(82, 16);
+            this.eLabel.TabIndex = 9;
+            this.eLabel.Text = "Extraversion";
             // 
-            // floatFieldBox4
+            // cLabel
             // 
-            this.floatFieldBox4.HasBounds = true;
-            this.floatFieldBox4.Location = new System.Drawing.Point(153, 130);
-            this.floatFieldBox4.MaxValue = 1F;
-            this.floatFieldBox4.MinValue = -1F;
-            this.floatFieldBox4.Name = "floatFieldBox4";
-            this.floatFieldBox4.Size = new System.Drawing.Size(100, 22);
-            this.floatFieldBox4.TabIndex = 3;
+            this.cLabel.AutoSize = true;
+            this.cLabel.Location = new System.Drawing.Point(21, 72);
+            this.cLabel.Name = "cLabel";
+            this.cLabel.Size = new System.Drawing.Size(121, 16);
+            this.cLabel.TabIndex = 8;
+            this.cLabel.Text = "Conscientiousness";
             // 
-            // floatFieldBox5
+            // oLabel
             // 
-            this.floatFieldBox5.HasBounds = false;
-            this.floatFieldBox5.Location = new System.Drawing.Point(153, 158);
-            this.floatFieldBox5.MaxValue = 1F;
-            this.floatFieldBox5.MinValue = -1F;
-            this.floatFieldBox5.Name = "floatFieldBox5";
-            this.floatFieldBox5.Size = new System.Drawing.Size(100, 22);
-            this.floatFieldBox5.TabIndex = 4;
+            this.oLabel.AutoSize = true;
+            this.oLabel.Location = new System.Drawing.Point(21, 44);
+            this.oLabel.Name = "oLabel";
+            this.oLabel.Size = new System.Drawing.Size(70, 16);
+            this.oLabel.TabIndex = 7;
+            this.oLabel.Text = "Openness";
             // 
-            // button1
+            // recalcDButton
             // 
-            this.button1.Location = new System.Drawing.Point(24, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Update Personality";
-            this.button1.UseVisualStyleBackColor = true;
+            this.recalcDButton.Location = new System.Drawing.Point(178, 198);
+            this.recalcDButton.Name = "recalcDButton";
+            this.recalcDButton.Size = new System.Drawing.Size(165, 23);
+            this.recalcDButton.TabIndex = 6;
+            this.recalcDButton.Text = "Recalculate Dspositions";
+            this.recalcDButton.UseVisualStyleBackColor = true;
+            this.recalcDButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button3
+            // updatePButton
             // 
-            this.button3.Location = new System.Drawing.Point(178, 198);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 23);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Recalculate Dspositions";
-            this.button3.UseVisualStyleBackColor = true;
+            this.updatePButton.Location = new System.Drawing.Point(24, 198);
+            this.updatePButton.Name = "updatePButton";
+            this.updatePButton.Size = new System.Drawing.Size(131, 23);
+            this.updatePButton.TabIndex = 5;
+            this.updatePButton.Text = "Update Personality";
+            this.updatePButton.UseVisualStyleBackColor = true;
+            this.updatePButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // nEntry
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Openness";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.nEntry.HasBounds = false;
+            this.nEntry.Location = new System.Drawing.Point(153, 158);
+            this.nEntry.MaxValue = 1F;
+            this.nEntry.MinValue = -1F;
+            this.nEntry.Name = "nEntry";
+            this.nEntry.Size = new System.Drawing.Size(100, 22);
+            this.nEntry.TabIndex = 4;
             // 
-            // label2
+            // aEntry
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Conscientiousness";
+            this.aEntry.HasBounds = true;
+            this.aEntry.Location = new System.Drawing.Point(153, 130);
+            this.aEntry.MaxValue = 1F;
+            this.aEntry.MinValue = -1F;
+            this.aEntry.Name = "aEntry";
+            this.aEntry.Size = new System.Drawing.Size(100, 22);
+            this.aEntry.TabIndex = 3;
             // 
-            // label3
+            // eEntry
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Extraversion";
+            this.eEntry.HasBounds = true;
+            this.eEntry.Location = new System.Drawing.Point(153, 102);
+            this.eEntry.MaxValue = 1F;
+            this.eEntry.MinValue = -1F;
+            this.eEntry.Name = "eEntry";
+            this.eEntry.Size = new System.Drawing.Size(100, 22);
+            this.eEntry.TabIndex = 2;
             // 
-            // label4
+            // cEntry
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 16);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Agreeableness";
+            this.cEntry.HasBounds = true;
+            this.cEntry.Location = new System.Drawing.Point(153, 72);
+            this.cEntry.MaxValue = 1F;
+            this.cEntry.MinValue = -1F;
+            this.cEntry.Name = "cEntry";
+            this.cEntry.Size = new System.Drawing.Size(100, 22);
+            this.cEntry.TabIndex = 1;
             // 
-            // label5
+            // oEntry
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 158);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Neuroticism";
+            this.oEntry.HasBounds = true;
+            this.oEntry.Location = new System.Drawing.Point(153, 44);
+            this.oEntry.MaxValue = 1F;
+            this.oEntry.MinValue = -1F;
+            this.oEntry.Name = "oEntry";
+            this.oEntry.Size = new System.Drawing.Size(100, 22);
+            this.oEntry.TabIndex = 0;
+            // 
+            // decayErrorProvider
+            // 
+            this.decayErrorProvider.ContainerControl = this;
             // 
             // MainForm
             // 
@@ -760,11 +761,11 @@
             this.tableLayoutPanel10.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmotionDispositions)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.decayErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emotionListItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainFormBindingSource)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -809,18 +810,18 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.DataGridView dataGridViewGoals;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox floatFieldBox5;
-        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox floatFieldBox4;
-        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox floatFieldBox3;
-        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox floatFieldBox2;
-        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox floatFieldBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label oLabel;
+        private System.Windows.Forms.Button recalcDButton;
+        private System.Windows.Forms.Button updatePButton;
+        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox nEntry;
+        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox aEntry;
+        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox eEntry;
+        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox cEntry;
+        private GAIPS.AssetEditorTools.TypedTextBoxes.FloatFieldBox oEntry;
+        private System.Windows.Forms.Label nLabel;
+        private System.Windows.Forms.Label aLabel;
+        private System.Windows.Forms.Label eLabel;
+        private System.Windows.Forms.Label cLabel;
     }
 }
 

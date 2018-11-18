@@ -206,8 +206,12 @@ namespace EmotionalAppraisalWF
             dataGridViewGoals.DataSource = new BindingListView<GoalDTO>(LoadedAsset.GetAllGoals().ToList());
         }
 
-        private void label1_Click(object sender, EventArgs e) {
+        private void button1_Click(object sender, EventArgs e) {
+            _emotionDispositionsVM.SavePersonalityFactors(oEntry.Value, cEntry.Value, eEntry.Value, aEntry.Value, nEntry.Value);
+        }
 
+        private void button3_Click(object sender, EventArgs e) {
+            _emotionDispositionsVM.resetDispositionOnPersonality();
         }
     }
 }

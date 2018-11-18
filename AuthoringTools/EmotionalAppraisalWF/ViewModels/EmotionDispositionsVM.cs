@@ -74,5 +74,24 @@ namespace EmotionalAppraisalWF.ViewModels
             EmotionDispositions.Refresh();
 			_mainForm.SetModified();
 		}
+
+        public void SavePersonalityFactors(double o, double c, double e, double a, double n) {
+            _emotionalAppraisalAsset.setPersonalityFactor("Openness", o);
+            _emotionalAppraisalAsset.setPersonalityFactor("Conscientiousness", c);
+            _emotionalAppraisalAsset.setPersonalityFactor("Extraversion", e);
+            _emotionalAppraisalAsset.setPersonalityFactor("Agreeableness", a);
+            _emotionalAppraisalAsset.setPersonalityFactor("Neuroticism", n);
+            _mainForm.SetModified();
+        }
+
+        public void resetDispositionOnPersonality() {
+            List<EmotionDispositionDTO> dispositions = _emotionalAppraisalAsset.getPersonalityDispositions();
+            IList<EmotionDispositionDTO> current = _emotionalAppraisalAsset.EmotionDispositions.ToList();
+            RemoveDispositions(current);
+            foreach (var i in dispositions) {
+                AddEmotionDisposition(i);
+            }
+            _mainForm.SetModified();
+        }
     }
 }
