@@ -328,6 +328,7 @@ namespace EmotionalAppraisal
             dataHolder.SetValue("AppraisalRules", m_appraisalDerivator);
             dataHolder.SetValue("EmotionDispositions", m_emotionDispositions.Values.Prepend(m_defaultEmotionalDisposition).ToArray());
             dataHolder.SetValue("Goals", m_goals.Values.ToArray());
+            dataHolder.SetValue("Personality", m_personality.Values.ToArray());
         }
 
         /// <summary>
@@ -394,6 +395,14 @@ namespace EmotionalAppraisal
             {
                 m_goals.Add(g.Name.ToString(), g);
             }
+
+            m_personality = new Dictionary<string, double>();
+            var factors = dataHolder.GetValue<Double[]>("Personality");
+            m_personality.Add("Openness", factors[0]);
+            m_personality.Add("Conscientiousness", factors[1]);
+            m_personality.Add("Extraversion", factors[2]);
+            m_personality.Add("Agreeableness", factors[3]);
+            m_personality.Add("Neuroticism", factors[4]);
         }
 
         protected override string OnAssetLoaded()
