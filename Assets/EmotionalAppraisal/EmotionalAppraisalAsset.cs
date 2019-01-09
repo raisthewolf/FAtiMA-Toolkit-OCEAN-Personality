@@ -79,8 +79,8 @@ namespace EmotionalAppraisal
             Dictionary<string, int> newValues = new Dictionary<string, int>();
             Dictionary<string, int> newValuesD = new Dictionary<string, int>();
 
-            newValues["Anger"] = (int)(5 - m_personality["Neuroticism"]*3);
-            newValuesD["Anger"] = (int)(5 + m_personality["Neuroticism"] * 3);
+            newValues["Anger"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Anger"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Distress"] = (int)(5 - m_personality["Neuroticism"] * 3);
             newValuesD["Distress"] = (int)(5 + m_personality["Neuroticism"] * 3);
@@ -88,8 +88,8 @@ namespace EmotionalAppraisal
             newValues["Remorse"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
             newValuesD["Remorse"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
 
-            newValues["Reproach"] = (int)(5 - m_personality["Neuroticism"] * 3);
-            newValuesD["Reproach"] = (int)(5 + m_personality["Neuroticism"] * 3);
+            newValues["Reproach"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Reproach"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Shame"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
             newValuesD["Shame"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
@@ -124,8 +124,8 @@ namespace EmotionalAppraisal
             Dictionary<string, int> newValuesD = new Dictionary<string, int>();
             List<EmotionDispositionDTO> ret = new List<EmotionDispositionDTO>();
 
-            newValues["Anger"] = (int)(5 - m_personality["Neuroticism"] * 3);
-            newValuesD["Anger"] = (int)(5 + m_personality["Neuroticism"] * 3);
+            newValues["Anger"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Anger"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Distress"] = (int)(5 - m_personality["Neuroticism"] * 3);
             newValuesD["Distress"] = (int)(5 + m_personality["Neuroticism"] * 3);
@@ -133,8 +133,8 @@ namespace EmotionalAppraisal
             newValues["Remorse"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
             newValuesD["Remorse"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
 
-            newValues["Reproach"] = (int)(5 - m_personality["Neuroticism"] * 3);
-            newValuesD["Reproach"] = (int)(5 + m_personality["Neuroticism"] * 3);
+            newValues["Reproach"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Reproach"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Shame"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
             newValuesD["Shame"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);

@@ -569,6 +569,7 @@ namespace RolePlayCharacter
             registry.RegistDynamicProperty(RANDOM_METHOD_TEMPLATE, RandomCalculator);
             registry.RegistDynamicProperty(LOG_TEMPLATE, LogDynamicProperty);
             registry.RegistDynamicProperty(IS_SALIENT_TEMPLATE, IsSalientPropertyCalculator);
+            registry.RegistDynamicProperty(PERSONALITY_FACTOR_TEMPLATE, PersonalityFactorCalculator);
             m_am.BindToRegistry(registry);
         }
 
@@ -628,7 +629,7 @@ namespace RolePlayCharacter
                     if (x != Name.SELF_SYMBOL && x != (Name)context.Queryable.Perspective)
                         yield break;
 
-                    var v = m_emotionalAppraisalAsset.getPersonalityFactor(y.ToString());
+                    var v = (int)(100*m_emotionalAppraisalAsset.getPersonalityFactor(y.ToString()));
 
                     foreach (var c in context.Constraints) {
                         yield return new DynamicPropertyResult(new ComplexValue(Name.BuildName(v)), c);
