@@ -29,6 +29,14 @@ namespace EmotionalAppraisalWF
             comboBoxDefaultThreshold.SelectedIndex = comboBoxDefaultThreshold.FindString(_emotionDispositionsVM.DefaultThreshold.ToString());
             dataGridViewEmotionDispositions.DataSource = _emotionDispositionsVM.EmotionDispositions;
 
+            //Personality Factors
+            double[] factors = _emotionDispositionsVM.getFactors();
+            oEntry.Value = (float)factors[0];
+            cEntry.Value = (float)factors[1];
+            eEntry.Value = (float)factors[2];
+            aEntry.Value = (float)factors[3];
+            nEntry.Value = (float)factors[4];
+
             //Appraisal Rule
             _appraisalRulesVM = new AppraisalRulesVM(this);
             dataGridViewAppraisalRules.DataSource = _appraisalRulesVM.AppraisalRules;

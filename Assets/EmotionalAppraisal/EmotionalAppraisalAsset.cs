@@ -80,34 +80,34 @@ namespace EmotionalAppraisal
             Dictionary<string, int> newValuesD = new Dictionary<string, int>();
 
             newValues["Anger"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Anger"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Anger"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Distress"] = (int)(5 - m_personality["Neuroticism"] * 3);
-            newValuesD["Distress"] = (int)(5 + m_personality["Neuroticism"] * 3);
+            newValuesD["Distress"] = (int)(5 - m_personality["Neuroticism"] * 3);
 
             newValues["Remorse"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Remorse"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Remorse"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
 
             newValues["Reproach"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Reproach"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Reproach"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Shame"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Shame"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Shame"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
 
             newValues["Admiration"] = (int)(5 - m_personality["Agreeableness"] * 3);
-            newValuesD["Admiration"] = (int)(5 + m_personality["Agreeableness"] * 3);
+            newValuesD["Admiration"] = (int)(5 - m_personality["Agreeableness"] * 3);
 
             newValues["Gratitude"] = (int)(5 - m_personality["Agreeableness"] * 3);
-            newValuesD["Gratitude"] = (int)(5 + m_personality["Agreeableness"] * 3);
+            newValuesD["Gratitude"] = (int)(5 - m_personality["Agreeableness"] * 3);
 
             newValues["Joy"] = (int)(5 - m_personality["Extraversion"] * 3);
-            newValuesD["Joy"] = (int)(5 + m_personality["Extraversion"] * 3);
+            newValuesD["Joy"] = (int)(5 - m_personality["Extraversion"] * 3);
 
             newValues["Pride"] = (int)(5 - m_personality["Extraversion"] * 3);
-            newValuesD["Pride"] = (int)(5 + m_personality["Extraversion"] * 3);
+            newValuesD["Pride"] = (int)(5 - m_personality["Extraversion"] * 3);
 
             newValues["Gratification"] = (int)(5 - m_personality["Extraversion"] * 3);
-            newValuesD["Gratification"] = (int)(5 + m_personality["Extraversion"] * 3);
+            newValuesD["Gratification"] = (int)(5 - m_personality["Extraversion"] * 3);
 
             for (int i = 0; i < 10; i++) {
                 EmotionDisposition add = new EmotionDisposition(emotionList[i], newValuesD[emotionList[i]], newValues[emotionList[i]]);
@@ -125,34 +125,34 @@ namespace EmotionalAppraisal
             List<EmotionDispositionDTO> ret = new List<EmotionDispositionDTO>();
 
             newValues["Anger"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Anger"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Anger"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Distress"] = (int)(5 - m_personality["Neuroticism"] * 3);
-            newValuesD["Distress"] = (int)(5 + m_personality["Neuroticism"] * 3);
+            newValuesD["Distress"] = (int)(5 - m_personality["Neuroticism"] * 3);
 
             newValues["Remorse"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Remorse"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Remorse"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
 
             newValues["Reproach"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Reproach"] = (int)(5 + (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Reproach"] = (int)(5 - (m_personality["Neuroticism"] - m_personality["Agreeableness"]) * 1.5);
 
             newValues["Shame"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
-            newValuesD["Shame"] = (int)(5 + (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
+            newValuesD["Shame"] = (int)(5 - (m_personality["Neuroticism"] + m_personality["Agreeableness"]) * 1.5);
 
             newValues["Admiration"] = (int)(5 - m_personality["Agreeableness"] * 3);
-            newValuesD["Admiration"] = (int)(5 + m_personality["Agreeableness"] * 3);
+            newValuesD["Admiration"] = (int)(5 - m_personality["Agreeableness"] * 3);
 
             newValues["Gratitude"] = (int)(5 - m_personality["Agreeableness"] * 3);
-            newValuesD["Gratitude"] = (int)(5 + m_personality["Agreeableness"] * 3);
+            newValuesD["Gratitude"] = (int)(5 - m_personality["Agreeableness"] * 3);
 
             newValues["Joy"] = (int)(5 - m_personality["Extraversion"] * 3);
-            newValuesD["Joy"] = (int)(5 + m_personality["Extraversion"] * 3);
+            newValuesD["Joy"] = (int)(5 - m_personality["Extraversion"] * 3);
 
             newValues["Pride"] = (int)(5 - m_personality["Extraversion"] * 3);
-            newValuesD["Pride"] = (int)(5 + m_personality["Extraversion"] * 3);
+            newValuesD["Pride"] = (int)(5 - m_personality["Extraversion"] * 3);
 
             newValues["Gratification"] = (int)(5 - m_personality["Extraversion"] * 3);
-            newValuesD["Gratification"] = (int)(5 + m_personality["Extraversion"] * 3);
+            newValuesD["Gratification"] = (int)(5 - m_personality["Extraversion"] * 3);
 
             for (int i = 0; i < 10; i++) {
                 EmotionDisposition add = new EmotionDisposition(emotionList[i], newValuesD[emotionList[i]], newValues[emotionList[i]]);

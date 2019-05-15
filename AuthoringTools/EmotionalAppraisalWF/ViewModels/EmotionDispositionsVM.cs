@@ -93,5 +93,15 @@ namespace EmotionalAppraisalWF.ViewModels
             }
             _mainForm.SetModified();
         }
+
+        public double[] getFactors() {
+            double[] ret = new double[5] {
+                _emotionalAppraisalAsset.getPersonalityFactor("Openness"),
+                _emotionalAppraisalAsset.getPersonalityFactor("Conscientiousness"),
+                _emotionalAppraisalAsset.getPersonalityFactor("Extraversion"),
+                _emotionalAppraisalAsset.getPersonalityFactor("Agreeableness"),
+                _emotionalAppraisalAsset.getPersonalityFactor("Neuroticism") };
+            return ret;
+        }
     }
 }
